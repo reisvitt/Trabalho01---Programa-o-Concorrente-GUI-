@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1080.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <AnchorPane fx:id="anchorPanePrincipal" prefHeight="550.0" prefWidth="1080.0" style="-fx-background-color: #009900ff;">
+         <children>
+            <Button fx:id="buttonReinciarJogo" layoutX="925.0" layoutY="120.0" mnemonicParsing="false" onAction="#reiniciarCorrida" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #cbfa0b; -fx-text-fill: black; -fx-background-radius: 10px; -fx-border-color: white; -fx-border-radius: 10px;" stylesheets="@../css/Style.css" text="Reiniciar jogo" />
+            <Button fx:id="buttonPauseJogo" layoutX="925.0" layoutY="175.0" mnemonicParsing="false" onAction="#pause" prefHeight="35.0" prefWidth="130.0" styleClass="button-style" stylesheets="@../css/Style.css" text="Pause" />
+            <Pane layoutX="916.0" layoutY="248.0" prefHeight="55.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="4.0" style="-fx-text-fill: white;" text="Velocidade - Max">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Slider fx:id="sliderVelocidadeMax" blockIncrement="2.0" layoutY="30.0" max="50.0" min="2.0" onMouseReleased="#velocidadeMax" value="26.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="916.0" layoutY="328.0" prefHeight="55.0" prefWidth="160.0">
+               <children>
+                  <Slider fx:id="sliderVelocidadePateta" blockIncrement="2.0" layoutY="30.0" max="50.0" min="2.0" onMouseReleased="#velocidadePateta" value="26.0" />
+                  <Label layoutX="-1.0" layoutY="1.0" style="-fx-text-fill: white;" text="Velocidade - Pateta">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+            <Separator layoutX="893.0" layoutY="7.0" orientation="VERTICAL" prefHeight="537.0" prefWidth="5.0" />
+            <ImageView fitHeight="100.0" fitWidth="160.0" layoutX="907.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Preenchimento2.png" />
+               </image></ImageView>
+            <ImageView fitHeight="150.0" fitWidth="160.0" layoutX="912.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Preenchimento1.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="550.0" prefWidth="880.0" style="-fx-background-color: #0a1d5c;">
+         <children>
+            <ImageView fitHeight="550.0" fitWidth="880.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/background.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="max" fitHeight="50.0" fitWidth="35.0" layoutX="415.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Max/paradoParaDireita.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pateta" fitHeight="50.0" fitWidth="35.0" layoutX="460.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Pateta/paradoParaDireita.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="paneApresentacao" opacity="0.9" prefHeight="550.0" prefWidth="1080.0" style="-fx-background-color: #1c1c1c;" visible="false">
+         <children>
+            <Label layoutX="185.0" layoutY="235.0" styleClass="label-apresentacao" stylesheets="@../css/Style.css" text="Este é um jogo de corrida entre Max e o Pateta" />
+            <Button layoutX="440.0" layoutY="307.0" mnemonicParsing="false" onAction="#inicioCorrida" prefHeight="40.0" prefWidth="200.0" styleClass="button-iniciar" stylesheets="@../css/Style.css" text="Iniciar jogo" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="433.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Max/slider.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Pateta/slider.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="paneVencedor" prefHeight="550.0" prefWidth="897.0" style="-fx-background-color: black; -fx-opacity: 0.7;" visible="false">
+         <children>
+            <Label fx:id="labelVencedor" layoutX="335.0" layoutY="250.0" styleClass="label_vencedor" stylesheets="@../css/Style.css" text="VENCEDOR" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
